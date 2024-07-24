@@ -1,0 +1,80 @@
+.devicon-netlify-plain {
+  font-size: 36px;
+  color: #323743;
+}
+
+.devicons {
+  font-size: 36px;
+  color: #323743;
+}
+
+.langchain {
+  width: 50px;
+  height: 30px;
+  /* font-size: 36px; */
+  background: url('../svg_icon/icon.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.mobile-imgs {
+  display: flex;
+}
+
+.base-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.overlay.style1 {
+  background-color: #efa8b0;
+}
+
+.overlay.style2 {
+  background-color: #c79cc8;
+}
+
+.overlay.style3 {
+  background-color: #a89cc8;
+}
+
+.overlay.style4 {
+  background-color: #9bb2e1;
+}
+
+.base-container:hover .overlay {
+  opacity: 0.97;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.inner-content {
+  padding: 20px;
+}
+
+.left-img {
+  border-radius: 12px 0 0 12px;
+}
+
+.right-img {
+  border-radius: 0 12px 12px 0;
+}
+
+.app-img {
+  border-radius: 12px;
+}

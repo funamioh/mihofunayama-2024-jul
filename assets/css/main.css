@@ -72,24 +72,6 @@ input, select, textarea {
 	appearance: none;
 }
 
-.devicon-netlify-plain {
-  font-size: 36px;
-  color: #323743;
-}
-
-.devicons {
-  font-size: 36px;
-  color: #323743;
-}
-
-.langchain {
-  width: 50px;
-  height: 30px;
-  /* font-size: 36px; */
-  background: url('../svg_icon/icon.svg') no-repeat center center;
-  background-size: contain;
-}
-
 /* Basic */
 
 	@-ms-viewport {
