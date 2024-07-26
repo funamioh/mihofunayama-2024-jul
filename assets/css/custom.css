@@ -1,3 +1,32 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 2em 0 2em 0;
+}
+
+.info p {
+  font-size: 0.9em;
+}
+
+/* important */
+.list {
+  display: flex;
+  flex: 0 0 calc(50% - 15px);
+  text-align: left;
+  align-items: center;
+  max-width: calc(50% - 15px);
+  flex-wrap: wrap;
+}
+
+p, label {
+  margin-bottom: 0;
+}
+
+label {
+  padding: 0 10px 0 3px;
+}
+
 .devicon-netlify-plain {
   font-size: 36px;
   color: #323743;
@@ -57,12 +86,6 @@
   opacity: 0.97;
 }
 
-.projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
 .inner-content {
   padding: 20px;
 }
@@ -77,4 +100,43 @@
 
 .app-img {
   border-radius: 12px;
+}
+
+/* Projects Container */
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .info {
+    display: block;
+    margin: 2em 0 2em 0;
+  }
+
+  .list {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .base-container {
+    display: block;
+    /* width: 20em; */
+    /* width: 20em; */
+    max-width: 100%;
+    /* margin: 0 auto 2em auto; */
+    /* margin: 0 auto; */
+    margin: 20px auto 1em auto;
+  }
+
+  .overlay {
+    max-width: 100%;
+    margin: 0px auto;
+  }
 }
