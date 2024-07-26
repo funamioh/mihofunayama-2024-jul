@@ -27,6 +27,38 @@ label {
   padding: 0 10px 0 3px;
 }
 
+.tech-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #F7F7F7;
+  margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #323743;
+  border-radius: 4px;
+  padding: 0.5em;
+  justify-content: space-between;
+}
+
+.tech-container h3 {
+  margin-bottom: 0;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.skil-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #323743;
+  border-radius: 4px;
+  padding: 0.2em;
+}
+
 .devicon-netlify-plain {
   font-size: 36px;
   color: #323743;
