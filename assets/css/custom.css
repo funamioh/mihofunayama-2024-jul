@@ -168,6 +168,41 @@ li {
   border-radius: 12px;
 }
 
+.shake-btn {
+    position: relative;
+    animation-name: shakeAnim;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+
+@keyframes shakeAnim {
+  0% {
+    left: 0
+  }
+  10% {
+    left: -3px
+  }
+  20% {
+    left: 3px
+  }
+  30% {
+    left: -8px
+  }
+  40% {
+    left: 8px
+  }
+  50% {
+    left: -5px
+  }
+  60% {
+    left: 3px
+  }
+  70% {
+    left: 0
+  }
+}
+
 
 @media screen and (min-width: 680px) {
   .info {
