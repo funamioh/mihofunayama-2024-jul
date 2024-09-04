@@ -112,7 +112,11 @@ li {
 
 .base-container {
   position: relative;
-  /* width: 100%; */
+  width: 100%;
+}
+
+.app-img {
+  width: 100%;
 }
 
 .overlay {
