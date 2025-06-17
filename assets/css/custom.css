@@ -1,6 +1,7 @@
 .info {
   display: block;
-  margin: 2em 0 2em 0;
+  margin: 2.5em 0;
+  line-height: 1.6;
 }
 
 .list {
@@ -11,7 +12,9 @@
 }
 
 .info p {
-  font-size: 0.9em;
+  font-size: 0.95em;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
 }
 
 /* important */
@@ -29,7 +32,9 @@ p, label {
 }
 
 label {
-  padding: 0 10px 0 3px;
+  padding: 0 12px 0 6px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .tech-container {
@@ -37,17 +42,21 @@ label {
   align-items: center;
   width: 100%;
   background-color: #F7F7F7;
-  margin-bottom: 1em;
-  display: flex;
+  margin-bottom: 1.5em;
   flex-wrap: wrap;
   border: 1px solid #323743;
-  border-radius: 4px;
-  padding: 0.5em;
+  border-radius: 8px;
+  padding: 1em;
   justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
 }
 
 .tech-container h3 {
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
+  color: #323743;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .skills {
@@ -60,8 +69,16 @@ label {
   display: flex;
   align-items: center;
   border: 1px solid #323743;
-  border-radius: 4px;
-  padding: 0.2em;
+  border-radius: 6px;
+  padding: 0.4em 0.8em;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.02);
+}
+
+.skil-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-color: #555;
 }
 
 .devicon-netlify-plain {
@@ -85,8 +102,8 @@ label {
 .projects-container {
   display: flex;
   flex-direction: column;
-  margin: 2em 0 2em 0;
-  gap: 1em;
+  margin: 3em 0;
+  gap: 2em;
 }
 
 li {
@@ -97,8 +114,21 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 1.5em;
   gap: 2em;
+}
+
+.btn-container .project-btn {
+  transition: all 0.3s ease;
+}
+
+.btn-container .project-btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-container .icon.brands:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .left-img, .center-img, .right-img {
@@ -108,6 +138,15 @@ li {
 .base-container {
   position: relative;
   width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.base-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
 }
 
 .app-img {
@@ -130,9 +169,13 @@ li {
   right: 0;
   height: 100%;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 16px;
   opacity: 0;
-  transition: .5s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay.style1 {
@@ -156,7 +199,23 @@ li {
 }
 
 .inner-content {
-  padding: 20px;
+  padding: 2em;
+  text-align: center;
+  color: #fff;
+}
+
+.inner-content h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+  letter-spacing: 0.02em;
+}
+
+.inner-content p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  opacity: 0.95;
 }
 
 .left-img {
@@ -168,7 +227,12 @@ li {
 }
 
 .app-img {
-  border-radius: 12px;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.base-container:hover .app-img {
+  transform: scale(1.05);
 }
 
 .shake-btn {
@@ -206,22 +270,132 @@ li {
   }
 }
 
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add hover effect for tech containers */
+.tech-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main.special {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Language Toggle */
+.language-toggle {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  z-index: 10001;
+  display: flex;
+  gap: 0.5em;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3em;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-option {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.lang-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.lang-text {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.lang-option:hover .lang-text {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.lang-option input[type="radio"]:checked + .lang-text {
+  background: rgba(255, 255, 255, 0.9);
+  color: #935d8c;
+  font-weight: 600;
+}
+
+.lang-option input[type="radio"]:checked + .lang-text:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+
+/* Mobile adjustments for language toggle */
+@media screen and (max-width: 480px) {
+  .language-toggle {
+    top: 1em;
+    right: 1em;
+    padding: 0.2em;
+  }
+  
+  .lang-text {
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+  }
+}
+
+/* Mobile spacing for About and Let's Consult sections */
+@media screen and (max-width: 736px) {
+  #intro .content p {
+    margin-bottom: 2em;
+  }
+  
+  #cta header.major p:last-child {
+    margin-bottom: 2em;
+  }
+}
 
 @media screen and (min-width: 680px) {
   .info {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 2em 0 2em 0;
+    margin: 3em 0;
+    gap: 1em;
   }
 
   .mobile-imgs {
-    width: 80%;
-    margin: 0 auto
+    width: 85%;
+    margin: 0 auto;
   }
 
   .app-img {
-    width: 80%;
+    width: 85%;
   }
 
   .base-container {
@@ -232,38 +406,197 @@ li {
 
   .overlay {
     display: block;
-    max-width: 80%;
-    margin: 0px auto;
+    max-width: 100%;
+    margin: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .tech-container {
+    padding: 1.5em;
   }
 }
 
 @media screen and (min-width: 900px) {
   .mobile-imgs {
-    width: 80%;
+    width: 85%;
   }
 
   .app-img {
-    width: 80%;
+    width: 85%;
   }
 
   .base-container {
-    max-width: 80%;
+    max-width: 85%;
+  }
+
+  .overlay {
+    max-width: 100%;
+    margin: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .tech-container {
+    padding: 2em;
+    margin-bottom: 2em;
   }
 }
 
 /* @media screen and (min-width: 1000px) { */
+/* Shiny Mouse Cursor Effect */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #935d8c, #c79cc8, #8cc9f0);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease-out;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(147, 93, 140, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.15s ease-out;
+}
+
+.cursor-ring.hover {
+  transform: scale(1.5);
+  border-color: rgba(147, 93, 140, 0.6);
+  background: rgba(147, 93, 140, 0.1);
+}
+
+.cursor-dot.hover {
+  transform: scale(1.2);
+  background: linear-gradient(45deg, #8cc9f0, #c79cc8, #935d8c);
+}
+
+/* Add cursor trail effect */
+.cursor-trail {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(45deg, #935d8c, #c79cc8);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Hide default cursor on interactive elements (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  a, button, .lang-option, .project-btn, .skil-box {
+    cursor: none;
+  }
+}
+
+/* Hide cursor effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot, .cursor-ring, .cursor-trail {
+    display: none !important;
+  }
+}
+
+/* Skateboard Logo Jumping Animation */
+.logo img {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  cursor: pointer;
+}
+
+.logo img:hover {
+  transform: translateY(-15px) rotate(5deg);
+  animation: bounce 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(-25px) rotate(-5deg);
+  }
+}
+
+.logo img.jumping {
+  animation: jumpEffect 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes jumpEffect {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Profile image circle fix */
+.spotlight .image img {
+  width: 16em;
+  height: 16em;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Skills section images circle fix */
+.features .image {
+  display: inline-block;
+  padding: 0.65em;
+  border-radius: 100%;
+  border: solid 1px;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.features .image img {
+  display: block;
+  width: 8em;
+  height: 8em;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 736px) {
+  .spotlight .image img {
+    width: 12em;
+    height: 12em;
+  }
+}
+
 @media screen and (min-width: 1300px) {
   .projects-container {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 2.5em;
   }
 
   .base-container {
-    width: calc(50% - 15px);
+    width: calc(50% - 1.25em);
     margin: 0;
   }
 
-  /* base-container -> parent, so width should be set to 100% */
   .app-img {
     width: 100%;
   }
@@ -272,10 +605,15 @@ li {
     width: 100%;
   }
 
-
   .overlay {
-    /* display: inline; */
     max-width: 100%;
     padding: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .tech-container {
+    margin-bottom: 2.5em;
   }
 }

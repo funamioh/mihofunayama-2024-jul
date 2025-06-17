@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Toggle Test</title>
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="lang-btn" data-lang="jp">JP</button>
+        <button class="lang-btn active" data-lang="en">EN</button>
+    </div>
+    
+    <header>
+        <p><strong>Full-stack developer</strong></p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#intro" class="active">About</a></li>
+            <li><a href="#first">My Skills</a></li>
+        </ul>
+    </nav>
+    
+    <script>
+        // Simple test version
+        const content = {
+            en: { subtitle: "Full-stack developer", navAbout: "About" },
+            jp: { subtitle: "フルスタック開発者", navAbout: "私について" }
+        };
+        
+        function switchLanguage(lang) {
+            console.log('Switching to:', lang);
+            const data = content[lang];
+            if (!data) return;
+            
+            const header = document.querySelector('header p strong');
+            if (header) {
+                header.textContent = data.subtitle;
+                console.log('Updated header to:', data.subtitle);
+            }
+            
+            const nav = document.querySelector('nav a[href="#intro"]');
+            if (nav) {
+                nav.textContent = data.navAbout;
+                console.log('Updated nav to:', data.navAbout);
+            }
+        }
+        
+        function initToggle() {
+            const buttons = document.querySelectorAll('.lang-btn');
+            console.log('Found buttons:', buttons.length);
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    console.log('Button clicked:', btn.getAttribute('data-lang'));
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    switchLanguage(btn.getAttribute('data-lang'));
+                });
+            });
+            
+            switchLanguage('en');
+        }
+        
+        document.addEventListener('DOMContentLoaded', initToggle);
+    </script>
+</body>
+</html>
